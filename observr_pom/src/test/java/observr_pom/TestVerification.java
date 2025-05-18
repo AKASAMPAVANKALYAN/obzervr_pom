@@ -21,12 +21,12 @@ public class TestVerification extends BaseClass {
 		System.out.println("Expected Title: " + expectedTitle);
 		System.out.println("Actual Title: " + actualTitle);
 		Assert.assertEquals(actualTitle, expectedTitle, "Title does not match!");
-Thread.sleep(2000);
+
 		// 2. Verify Logo, menu btn
 		HomePage homePage = new HomePage(driver);
 		Assert.assertTrue(homePage.isLogoDisplayed(), "Logo is not visible!");
 		System.out.println("logo verifyed");
-		Thread.sleep(2000);
+		
 
 	}
 
@@ -41,7 +41,7 @@ Thread.sleep(2000);
 		FileHandler.copy(temp, per);
 
 		System.out.println("page loaded successful");
-		Thread.sleep(2000);
+		
 
 		// 4. main text element
 		HomePage homePage = new HomePage(driver);
@@ -49,7 +49,6 @@ Thread.sleep(2000);
 		String expectedtext = "Digital Work Management For Asset-Intensive Industries";
 
 		Assert.assertEquals(actualtext, expectedtext, "Main text do not match");
-		Thread.sleep(2000);
 		
 	}
 
@@ -75,7 +74,6 @@ Thread.sleep(2000);
 		} else {
 			System.out.println("book session is not enebled");
 		}
-		Thread.sleep(2000);
 
 	}
 
@@ -84,23 +82,18 @@ Thread.sleep(2000);
 		HomePage homePage = new HomePage(driver);
 		Assert.assertTrue(homePage.manufacturingenebled(), "maunfacturing is not enabled");
 		System.out.println("manufacturing is enabled");
-		Thread.sleep(2000);
 
 		Assert.assertTrue(homePage.miningenebled(), "mining is not enabled");
 		System.out.println("mining enabled");
-		Thread.sleep(2000);
 
 		Assert.assertTrue(homePage.oilandgasenebled(), "oil and gas is not enabled");
 		System.out.println("oil and gas enebled");
-		Thread.sleep(2000);
 
 		Assert.assertTrue(homePage.railenebled(), "rail is not enabled");
 		System.out.println("rail enebled");
-		Thread.sleep(2000);
 
 		Assert.assertTrue(homePage.bulkingportsenebled(), "maunfacturing is not enabled");
 		System.out.println("bulking ports enebled");
-		Thread.sleep(2000);
 
 	}
 	
@@ -137,5 +130,33 @@ Thread.sleep(2000);
 		
 		Assert.assertTrue(homePage.templatesenebled(), "templates is not enabled");
 		System.out.println("templates is enabled");
+	}
+	
+	@Test(priority = 6)
+	public void others () {
+		HomePage homePage = new HomePage(driver);
+		Assert.assertTrue(homePage.blogenabled(), "blog is not enabled");
+		System.out.println("blog is enabled");
+		
+		Assert.assertTrue(homePage.googpalyenebled(), "googleplay is not enabled");
+		System.out.println("google play is enabled");
+		
+		Assert.assertTrue(homePage.winstoreenabled(), "windows store is not enabled");
+		System.out.println("windows store is enabled");
+		
+		Assert.assertTrue(homePage.appleplayenebled(), "apple store is not enabled");
+		System.out.println("apple store is enabled");
+		
+		Assert.assertTrue(homePage.termsenabled(), "terms is not enabled");
+		System.out.println("terms is enabled");
+		
+		Assert.assertTrue(homePage.privacyenabled(), "piracy is not enabled");
+		System.out.println("piracy is enabled");
+		
+		Assert.assertTrue(homePage.youtubeenebled(), "youtube is not enabled");
+		System.out.println("youtube is enabled");
+		
+		Assert.assertTrue(homePage.linkedenabled(), "linkedin is not enabled");
+		System.out.println("inkedin is enabled");
 	}
 }

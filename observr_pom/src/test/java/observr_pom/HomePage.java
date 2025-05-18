@@ -149,4 +149,68 @@ public class HomePage {
     public boolean templatesenebled() {
 		return templates().isEnabled();
 	}
+    
+    public WebElement blog() {
+		return driver.findElement(By.xpath("//a[@class='link-category' and @href='/blog']"));
+	}
+    
+    public boolean blogenabled() {
+		return blog().isEnabled();
+	}
+    
+    public WebElement googplay() {
+		return driver.findElement(By.className("google-play"));
+	}
+    
+    public boolean googpalyenebled() {
+		return googplay().isEnabled();
+	}
+    
+    public WebElement appleplay() {
+		return driver.findElement(By.className("apple-store"));
+	}
+    
+    public boolean appleplayenebled() {
+		return appleplay().isEnabled();
+	}
+    
+    public WebElement winstore() {
+		return driver.findElement(By.className("windows-store"));
+	}
+    
+    public boolean winstoreenabled() {
+		return winstore().isEnabled();
+	}
+    
+    public WebElement terms() {
+		return driver.findElement(By.xpath("//a[@href='/terms-of-use']"));
+	}
+    
+    public boolean termsenabled() {
+		return terms().isEnabled();
+		
+		
+	}public WebElement privacy() {
+		return driver.findElement(By.xpath("//a[text()='Privacy Policy']"));
+	}
+    
+    public boolean privacyenabled() {
+		return privacy().isEnabled();
+	}
+    
+    public WebElement youtube() {
+		return driver.findElement(By.xpath("//img[@class='social-icon' and contains(@src, 'XMLID_30_')]"));
+	}
+    
+    public boolean youtubeenebled() {
+		return youtube().isEnabled();
+	}
+    
+    public WebElement linkedin() {
+		return driver.findElement(By.xpath("//img[@class='social-icon' and contains(@src, 'XMLID_16_')]"));
+	}
+    
+    public boolean linkedenabled() {
+		return linkedin().isEnabled();
+	}
 }
