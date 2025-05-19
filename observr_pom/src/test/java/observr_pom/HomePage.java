@@ -96,7 +96,7 @@ public class HomePage {
 	}
     
     public WebElement inspections() {
-		return driver.findElement(By.xpath("/html/body/div/footer/div/div[1]/div[3]/a[2]"));
+		return driver.findElement(By.xpath("/html/body/div/footer/div/div[1]/div[3]/a[3]"));
 	}
     
     public boolean inspectionsenabled() {
@@ -104,14 +104,14 @@ public class HomePage {
 	}
     
     public WebElement complains() {
-		return driver.findElement(By.xpath("/html/body/div/footer/div/div[1]/div[3]/a[2]"));
+		return driver.findElement(By.xpath("/html/body/div/footer/div/div[1]/div[3]/a[4]"));
 	}
     
     public boolean complainsenebled() {
 		return complains().isEnabled();
 	}
     public WebElement bussinessintelligence() {
-		return driver.findElement(By.xpath("/html/body/div/footer/div/div[1]/div[3]/a[2]"));
+		return driver.findElement(By.xpath("/html/body/div/footer/div/div[1]/div[3]/a[5]"));
 	}
     
     public boolean bussinessenabled() {
@@ -119,7 +119,7 @@ public class HomePage {
 	}
     
     public WebElement features() {
-		return driver.findElement(By.xpath("/html/body/div/footer/div/div[1]/div[3]/a[2]"));
+		return driver.findElement(By.xpath("/html/body/div/footer/div/div[1]/div[4]/a[1]"));
 	}
     
     public boolean featuresenabled() {
@@ -127,7 +127,7 @@ public class HomePage {
 	}
     
     public WebElement security() {
-		return driver.findElement(By.xpath("/html/body/div/footer/div/div[1]/div[3]/a[2]"));
+		return driver.findElement(By.xpath("/html/body/div/footer/div/div[1]/div[4]/a[2]"));
 	}
     
     public boolean securityenebled() {
@@ -135,7 +135,7 @@ public class HomePage {
 	}
     
     public WebElement integration() {
-		return driver.findElement(By.xpath("/html/body/div/footer/div/div[1]/div[3]/a[2]"));
+		return driver.findElement(By.xpath("/html/body/div/footer/div/div[1]/div[4]/a[3]"));
 	}
     
     public boolean integrationenabled() {
@@ -143,7 +143,7 @@ public class HomePage {
 	}
     
     public WebElement templates() {
-		return driver.findElement(By.xpath("/html/body/div/footer/div/div[1]/div[3]/a[2]"));
+		return driver.findElement(By.xpath("/html/body/div/footer/div/div[1]/div[4]/a[4]"));
 	}
     
     public boolean templatesenebled() {
