@@ -17,6 +17,14 @@
 			<artifactId>webdrivermanager</artifactId>
 			<version>5.9.2</version>
 		</dependency>
+		
+		<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>5.1.1</version> <!-- or latest -->
+</dependency>
+		
+		
 		<dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>

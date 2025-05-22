@@ -2,161 +2,151 @@ package observr_pom;
 
 import java.io.File;
 import java.io.IOException;
-
-import javax.print.attribute.SetOfIntegerSyntax;
-
-import org.apache.hc.core5.reactor.Command.Priority;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import com.aventstack.extentreports.Status;
 
-public class TestVerification extends BaseClass {
+public class TestVerification extends BaseClass  {
 
-	@Test(priority = 0)
-	public void verifyTitleAndLogo() throws IOException, InterruptedException {
-		// 1. Verify Title
-		String actualTitle = driver.getTitle();
-		System.out.println("Expected Title: " + expectedTitle);
-		System.out.println("Actual Title: " + actualTitle);
-		Assert.assertEquals(actualTitle, expectedTitle, "Title does not match!");
+    @Test(priority = 0)
+    public void verifyTitleAndLogo() throws IOException {
+        ExtentReportManager.createTest("Verify Title and Logo");
 
-		// 2. Verify Logo, menu btn
-		HomePage homePage = new HomePage(driver);
-		Assert.assertTrue(homePage.isLogoDisplayed(), "Logo is not visible!");
-		System.out.println("logo verifyed");
-		
+        String actualTitle = driver.getTitle();
+        ExtentReportManager.getTest().log(Status.INFO, "Actual Title: " + actualTitle);
+        ExtentReportManager.getTest().log(Status.INFO, "Expected Title: " + expectedTitle);
+        Assert.assertEquals(actualTitle, expectedTitle);
+        ExtentReportManager.getTest().pass("Title matches.");
 
-	}
+        HomePage homePage = new HomePage(driver);
+        Assert.assertTrue(homePage.isLogoDisplayed());
+        ExtentReportManager.getTest().pass("Logo is displayed.");
+    }
 
-	@Test(priority = 1)
-	public void verifyscreenshot_maintext() throws IOException, InterruptedException {
+    @Test(priority = 1)
+    public void verifyscreenshot_maintext() throws IOException {
+        ExtentReportManager.createTest("Verify Screenshot and Main Text");
 
-		// 3. Take Screenshot
-		TakesScreenshot ts = (TakesScreenshot) driver;
-		File temp = ts.getScreenshotAs(OutputType.FILE);
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File src = ts.getScreenshotAs(OutputType.FILE);
+        File dest = new File("./screenshot/homepage.png");
+        FileHandler.copy(src, dest);
+        ExtentReportManager.getTest().pass("Screenshot taken.");
 
-		File per = new File("./screenshot/homepage.png");
-		FileHandler.copy(temp, per);
+        HomePage homePage = new HomePage(driver);
+        String actualtext = homePage.getMainText();
+        String expectedtext = "Digital Work Management Solution For Asset-Intensive Industries";
+        Assert.assertEquals(actualtext, expectedtext);
+        ExtentReportManager.getTest().pass("Main text matches.");
+    }
 
-		System.out.println("page loaded successful");
-		
+    @Test(priority = 2)
+    public void verifyvideobtn_loadmorebtn_booksession() {
+        ExtentReportManager.createTest("Verify Buttons: Video, Load More, Book Session");
 
-		// 4. main text element
-		HomePage homePage = new HomePage(driver);
-		String actualtext = homePage.getMainText();
-		String expectedtext = "Digital Work Management Solution For Asset-Intensive Industries";
+        HomePage homePage = new HomePage(driver);
+        if (homePage.getvideobtn().isEnabled()) {
+            homePage.getvideobtn().click();
+            ExtentReportManager.getTest().pass("Video button clicked.");
+        }
 
-		Assert.assertEquals(actualtext, expectedtext, "Main text do not match");
-		
-	}
+        Assert.assertTrue(homePage.loadmorebtnenabled());
+        ExtentReportManager.getTest().pass("Load more button is enabled.");
 
-	@Test(priority = 2)
-	public void verifyvideobtn_loadmorebtn_booksession() throws InterruptedException {
+        Assert.assertTrue(homePage.getbooksession().isEnabled());
+        ExtentReportManager.getTest().pass("Book session button is enabled.");
+    }
 
-		HomePage homePage = new HomePage(driver);
-		if (homePage.getvideobtn().isEnabled()) {
-			System.out.println("Clicking on Video Button");
-			homePage.getvideobtn().click();
-		} else {
-			System.out.println("Video button not available");
-		}
-		
-		
-Assert.assertTrue(homePage.loadmorebtnenabled(), expectedTitle);
+    @Test(priority = 3)
+    public void industry() {
+        ExtentReportManager.createTest("Verify Industry Links");
 
+        HomePage homePage = new HomePage(driver);
+        Assert.assertTrue(homePage.manufacturingenebled());
+        ExtentReportManager.getTest().pass("Manufacturing link is enabled.");
 
-		System.out.println("load more btn enabled");
+        Assert.assertTrue(homePage.miningenebled());
+        ExtentReportManager.getTest().pass("Mining link is enabled.");
 
-		if (homePage.getbooksession().isEnabled()) {
-			System.out.println("book session is enebled");
-		} else {
-			System.out.println("book session is not enebled");
-		}
+        Assert.assertTrue(homePage.oilandgasenebled());
+        ExtentReportManager.getTest().pass("Oil and Gas link is enabled.");
 
-	}
+        Assert.assertTrue(homePage.railenebled());
+        ExtentReportManager.getTest().pass("Rail link is enabled.");
 
-	@Test(priority = 3)
-	public void industry() throws InterruptedException {
-		HomePage homePage = new HomePage(driver);
-		Assert.assertTrue(homePage.manufacturingenebled(), "maunfacturing is not enabled");
-		System.out.println("manufacturing is enabled");
+        Assert.assertTrue(homePage.bulkingportsenebled());
+        ExtentReportManager.getTest().pass("Bulk Ports link is enabled.");
+    }
 
-		Assert.assertTrue(homePage.miningenebled(), "mining is not enabled");
-		System.out.println("mining enabled");
+    @Test(priority = 4)
+    public void solutions() {
+        ExtentReportManager.createTest("Verify Solution Links");
 
-		Assert.assertTrue(homePage.oilandgasenebled(), "oil and gas is not enabled");
-		System.out.println("oil and gas enebled");
+        HomePage homePage = new HomePage(driver);
+        Assert.assertTrue(homePage.assesenebled());
+        ExtentReportManager.getTest().pass("Assess Maintenance enabled.");
 
-		Assert.assertTrue(homePage.railenebled(), "rail is not enabled");
-		System.out.println("rail enebled");
+        Assert.assertTrue(homePage.safetyenable());
+        ExtentReportManager.getTest().pass("Safety enabled.");
 
-		Assert.assertTrue(homePage.bulkingportsenebled(), "maunfacturing is not enabled");
-		System.out.println("bulking ports enebled");
+        Assert.assertTrue(homePage.inspectionsenabled());
+        ExtentReportManager.getTest().pass("Inspections enabled.");
 
-	}
-	
-	@Test(priority = 4)
-	public void solutions() {
-		HomePage homePage = new HomePage(driver);
-		Assert.assertTrue(homePage.assesenebled(), "assesmaintainance is not enabled");
-		System.out.println("assesmaintainance is enabled");
-		
-		Assert.assertTrue(homePage.safetyenable(), "safety is not enabled");
-		System.out.println("safety is enabled");
-		
-		Assert.assertTrue(homePage.inspectionsenabled(), "inspection is not enabled");
-		System.out.println("inspection is enabled");
-		
-		Assert.assertTrue(homePage.complainsenebled(), "complains is not enabled");
-		System.out.println("complains is enabled");
-		
-		Assert.assertTrue(homePage.bussinessenabled(), "bussiness intelligence is not enabled");
-		System.out.println("bussiness intelligence");
-	}
+        Assert.assertTrue(homePage.complainsenebled());
+        ExtentReportManager.getTest().pass("Complaints enabled.");
 
-	@Test(priority = 5)
-	public void product() {
-		HomePage homePage = new HomePage(driver);
-		Assert.assertTrue(homePage.featuresenabled(), "features is not enabled");
-		System.out.println("features is enabled");
-		
-		Assert.assertTrue(homePage.securityenebled(), "security is not enabled");
-		System.out.println("security is enabled");
-		
-		Assert.assertTrue(homePage.integrationenabled(), "integration is not enabled");
-		System.out.println("integration is enabled");
-		
-		Assert.assertTrue(homePage.templatesenebled(), "templates is not enabled");
-		System.out.println("templates is enabled");
-	}
-	
-	@Test(priority = 6)
-	public void others () {
-		HomePage homePage = new HomePage(driver);
-		Assert.assertTrue(homePage.blogenabled(), "blog is not enabled");
-		System.out.println("blog is enabled");
-		
-		Assert.assertTrue(homePage.googpalyenebled(), "googleplay is not enabled");
-		System.out.println("google play is enabled");
-		
-		Assert.assertTrue(homePage.winstoreenabled(), "windows store is not enabled");
-		System.out.println("windows store is enabled");
-		
-		Assert.assertTrue(homePage.appleplayenebled(), "apple store is not enabled");
-		System.out.println("apple store is enabled");
-		
-		Assert.assertTrue(homePage.termsenabled(), "terms is not enabled");
-		System.out.println("terms is enabled");
-		
-		Assert.assertTrue(homePage.privacyenabled(), "piracy is not enabled");
-		System.out.println("piracy is enabled");
-		
-		Assert.assertTrue(homePage.youtubeenebled(), "youtube is not enabled");
-		System.out.println("youtube is enabled");
-		
-		Assert.assertTrue(homePage.linkedenabled(), "linkedin is not enabled");
-		System.out.println("inkedin is enabled");
-	}
+        Assert.assertTrue(homePage.bussinessenabled());
+        ExtentReportManager.getTest().pass("Business Intelligence enabled.");
+    }
+
+    @Test(priority = 5)
+    public void product() {
+        ExtentReportManager.createTest("Verify Product Links");
+
+        HomePage homePage = new HomePage(driver);
+        Assert.assertTrue(homePage.featuresenabled());
+        ExtentReportManager.getTest().pass("Features enabled.");
+
+        Assert.assertTrue(homePage.securityenebled());
+        ExtentReportManager.getTest().pass("Security enabled.");
+
+        Assert.assertTrue(homePage.integrationenabled());
+        ExtentReportManager.getTest().pass("Integration enabled.");
+
+        Assert.assertTrue(homePage.templatesenebled());
+        ExtentReportManager.getTest().pass("Templates enabled.");
+    }
+
+    @Test(priority = 6)
+    public void others() {
+        ExtentReportManager.createTest("Verify Other Footer Links");
+
+        HomePage homePage = new HomePage(driver);
+        Assert.assertTrue(homePage.blogenabled());
+        ExtentReportManager.getTest().pass("Blog enabled.");
+
+        Assert.assertTrue(homePage.googpalyenebled());
+        ExtentReportManager.getTest().pass("Google Play enabled.");
+
+        Assert.assertTrue(homePage.winstoreenabled());
+        ExtentReportManager.getTest().pass("Windows Store enabled.");
+
+        Assert.assertTrue(homePage.appleplayenebled());
+        ExtentReportManager.getTest().pass("Apple Store enabled.");
+
+        Assert.assertTrue(homePage.termsenabled());
+        ExtentReportManager.getTest().pass("Terms enabled.");
+
+        Assert.assertTrue(homePage.privacyenabled());
+        ExtentReportManager.getTest().pass("Privacy Policy enabled.");
+
+        Assert.assertTrue(homePage.youtubeenebled());
+        ExtentReportManager.getTest().pass("YouTube enabled.");
+
+        Assert.assertTrue(homePage.linkedenabled());
+        ExtentReportManager.getTest().pass("LinkedIn enabled.");
+    }
 }

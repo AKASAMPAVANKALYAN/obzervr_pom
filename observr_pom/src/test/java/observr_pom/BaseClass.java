@@ -2,13 +2,11 @@ package observr_pom;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
@@ -24,13 +22,14 @@ public class BaseClass {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        // Load Excel file
+        // Load Excel data
         FileInputStream fis = new FileInputStream("./excelfiles/observr.xlsx");
         workbook = WorkbookFactory.create(fis);
-
-        // Read expected title and URL
         expectedTitle = workbook.getSheet("sheet1").getRow(0).getCell(1).getStringCellValue();
         url = workbook.getSheet("sheet1").getRow(1).getCell(1).getStringCellValue();
+
+        // Start reporting
+        ExtentReportManager.createTest("Observr Test Suite");
     }
 
     @BeforeMethod
@@ -38,8 +37,9 @@ public class BaseClass {
         driver.get(url);
     }
 
-  @AfterClass
-  public void quitbrowser() {
-	  driver.quit();
-  }
+    @AfterClass
+    public void quitbrowser() {
+        driver.quit();
+        ExtentReportManager.flush();
     }
+}
