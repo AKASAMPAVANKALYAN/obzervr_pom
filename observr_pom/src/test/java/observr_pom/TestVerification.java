@@ -46,7 +46,7 @@ public class TestVerification extends BaseClass {
 		// 4. main text element
 		HomePage homePage = new HomePage(driver);
 		String actualtext = homePage.getMainText();
-		String expectedtext = "Digital Work Management For Asset-Intensive Industries";
+		String expectedtext = "Digital Work Management Solution For Asset-Intensive Industries";
 
 		Assert.assertEquals(actualtext, expectedtext, "Main text do not match");
 		
@@ -62,12 +62,12 @@ public class TestVerification extends BaseClass {
 		} else {
 			System.out.println("Video button not available");
 		}
+		
+		
+Assert.assertTrue(homePage.loadmorebtnenabled(), expectedTitle);
 
-		if (homePage.getloadmorebtn().isEnabled()) {
-			System.out.println("load more btn enebled");
-		} else {
-			System.out.println("load more btn not enabled");
-		}
+
+		System.out.println("load more btn enabled");
 
 		if (homePage.getbooksession().isEnabled()) {
 			System.out.println("book session is enebled");

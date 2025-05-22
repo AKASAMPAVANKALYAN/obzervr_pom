@@ -33,10 +33,14 @@ public class HomePage {
     	return driver.findElement(By.xpath("/html/body/div/div[1]/div/div/a"));
     }
     public WebElement getloadmorebtn() {
-    	return driver.findElement(By.xpath("/html/body/div/div[2]/div/div[1]/div[2]/a[1]"));
+    	return driver.findElement(By.xpath("/html/body/div/div[3]/div/div[2]/a[1]"));
     }
+    
+    public boolean loadmorebtnenabled() {
+		return getloadmorebtn().isEnabled();
+	}
     public WebElement getbooksession() {
-    	return driver.findElement(By.xpath("/html/body/div/div[2]/div/div[1]/div[2]/a[2]"));
+    	return driver.findElement(By.linkText("Book Discovery Session"));
     }
     
     public WebElement mining() {
