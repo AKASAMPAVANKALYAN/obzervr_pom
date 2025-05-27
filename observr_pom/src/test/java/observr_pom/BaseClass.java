@@ -41,9 +41,7 @@ public class BaseClass {
         driver.quit();
         ExtentReportManager.flush();
     }
-
 	public void onTestFailure(ITestResult result) {
-		// TODO Auto-generated method stub
 		
 	}
 }
