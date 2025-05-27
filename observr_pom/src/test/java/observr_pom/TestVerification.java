@@ -1,14 +1,17 @@
 package observr_pom;
 
 import java.io.File;
+
 import java.io.IOException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 
+@Listeners(observr_pom.TestListener.class)
 public class TestVerification extends BaseClass  {
 
     @Test(priority = 0)
@@ -18,7 +21,7 @@ public class TestVerification extends BaseClass  {
         String actualTitle = driver.getTitle();
         ExtentReportManager.getTest().log(Status.INFO, "Actual Title: " + actualTitle);
         ExtentReportManager.getTest().log(Status.INFO, "Expected Title: " + expectedTitle);
-        Assert.assertEquals(actualTitle, expectedTitle);
+        Assert.assertEquals(actualTitle, expectedTitle, "page title does not match!");
         ExtentReportManager.getTest().pass("Title matches.");
 
         HomePage homePage = new HomePage(driver);
@@ -41,6 +44,7 @@ public class TestVerification extends BaseClass  {
         String expectedtext = "Digital Work Management Solution For Asset-Intensive Industries";
         Assert.assertEquals(actualtext, expectedtext);
         ExtentReportManager.getTest().pass("Main text matches.");
+        
     }
 
     @Test(priority = 2)
@@ -52,7 +56,6 @@ public class TestVerification extends BaseClass  {
             homePage.getvideobtn().click();
             ExtentReportManager.getTest().pass("Video button clicked.");
         }
-
         Assert.assertTrue(homePage.loadmorebtnenabled());
         ExtentReportManager.getTest().pass("Load more button is enabled.");
 

@@ -6,6 +6,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -22,13 +23,11 @@ public class BaseClass {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        // Load Excel data
         FileInputStream fis = new FileInputStream("./excelfiles/observr.xlsx");
         workbook = WorkbookFactory.create(fis);
         expectedTitle = workbook.getSheet("sheet1").getRow(0).getCell(1).getStringCellValue();
         url = workbook.getSheet("sheet1").getRow(1).getCell(1).getStringCellValue();
 
-        // Start reporting
         ExtentReportManager.createTest("Observr Test Suite");
     }
 
@@ -42,4 +41,9 @@ public class BaseClass {
         driver.quit();
         ExtentReportManager.flush();
     }
+
+	public void onTestFailure(ITestResult result) {
+		// TODO Auto-generated method stub
+		
+	}
 }
