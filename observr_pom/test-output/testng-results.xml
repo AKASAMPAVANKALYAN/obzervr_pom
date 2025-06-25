@@ -2,72 +2,72 @@
 <testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-05-27T15:38:03 IST" name="Default suite" finished-at="2025-05-27T15:38:15 IST" duration-ms="12154">
+  <suite started-at="2025-06-25T23:58:44 IST" name="Default suite" finished-at="2025-06-25T23:59:02 IST" duration-ms="18033">
     <groups>
     </groups>
-    <test started-at="2025-05-27T15:38:03 IST" name="Default test" finished-at="2025-05-27T15:38:15 IST" duration-ms="12154">
+    <test started-at="2025-06-25T23:58:44 IST" name="Default test" finished-at="2025-06-25T23:59:02 IST" duration-ms="18033">
       <class name="observr_pom.TestVerification">
-        <test-method is-config="true" signature="setupBrowser()[pri:0, instance:observr_pom.TestVerification@4681c175]" started-at="2025-05-27T15:38:03 IST" name="setupBrowser" finished-at="2025-05-27T15:38:07 IST" duration-ms="3899" status="PASS">
+        <test-method is-config="true" signature="setupBrowser()[pri:0, instance:observr_pom.TestVerification@353352b6]" started-at="2025-06-25T23:58:44 IST" name="setupBrowser" finished-at="2025-06-25T23:58:49 IST" duration-ms="5486" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupBrowser -->
-        <test-method is-config="true" signature="navigateToURL()[pri:0, instance:observr_pom.TestVerification@4681c175]" started-at="2025-05-27T15:38:07 IST" name="navigateToURL" finished-at="2025-05-27T15:38:09 IST" duration-ms="2351" status="PASS">
+        <test-method is-config="true" signature="navigateToURL()[pri:0, instance:observr_pom.TestVerification@353352b6]" started-at="2025-06-25T23:58:49 IST" name="navigateToURL" finished-at="2025-06-25T23:58:52 IST" duration-ms="2919" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToURL -->
-        <test-method signature="verifyTitleAndLogo()[pri:0, instance:observr_pom.TestVerification@4681c175]" started-at="2025-05-27T15:38:09 IST" name="verifyTitleAndLogo" finished-at="2025-05-27T15:38:09 IST" duration-ms="80" status="PASS">
+        <test-method signature="verifyTitleAndLogo()[pri:0, instance:observr_pom.TestVerification@353352b6]" started-at="2025-06-25T23:58:52 IST" name="verifyTitleAndLogo" finished-at="2025-06-25T23:58:52 IST" duration-ms="96" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyTitleAndLogo -->
-        <test-method is-config="true" signature="navigateToURL()[pri:0, instance:observr_pom.TestVerification@4681c175]" started-at="2025-05-27T15:38:09 IST" name="navigateToURL" finished-at="2025-05-27T15:38:10 IST" duration-ms="679" status="PASS">
+        <test-method is-config="true" signature="navigateToURL()[pri:0, instance:observr_pom.TestVerification@353352b6]" started-at="2025-06-25T23:58:52 IST" name="navigateToURL" finished-at="2025-06-25T23:58:54 IST" duration-ms="1677" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToURL -->
-        <test-method signature="verifyscreenshot_maintext()[pri:1, instance:observr_pom.TestVerification@4681c175]" started-at="2025-05-27T15:38:10 IST" name="verifyscreenshot_maintext" finished-at="2025-05-27T15:38:10 IST" duration-ms="398" status="PASS">
+        <test-method signature="verifyscreenshot_maintext()[pri:1, instance:observr_pom.TestVerification@353352b6]" started-at="2025-06-25T23:58:54 IST" name="verifyscreenshot_maintext" finished-at="2025-06-25T23:58:54 IST" duration-ms="561" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyscreenshot_maintext -->
-        <test-method is-config="true" signature="navigateToURL()[pri:0, instance:observr_pom.TestVerification@4681c175]" started-at="2025-05-27T15:38:10 IST" name="navigateToURL" finished-at="2025-05-27T15:38:11 IST" duration-ms="540" status="PASS">
+        <test-method is-config="true" signature="navigateToURL()[pri:0, instance:observr_pom.TestVerification@353352b6]" started-at="2025-06-25T23:58:54 IST" name="navigateToURL" finished-at="2025-06-25T23:58:56 IST" duration-ms="1889" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToURL -->
-        <test-method signature="verifyvideobtn_loadmorebtn_booksession()[pri:2, instance:observr_pom.TestVerification@4681c175]" started-at="2025-05-27T15:38:11 IST" name="verifyvideobtn_loadmorebtn_booksession" finished-at="2025-05-27T15:38:11 IST" duration-ms="217" status="PASS">
+        <test-method signature="verifyvideobtn_loadmorebtn_booksession()[pri:2, instance:observr_pom.TestVerification@353352b6]" started-at="2025-06-25T23:58:56 IST" name="verifyvideobtn_loadmorebtn_booksession" finished-at="2025-06-25T23:58:57 IST" duration-ms="244" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyvideobtn_loadmorebtn_booksession -->
-        <test-method is-config="true" signature="navigateToURL()[pri:0, instance:observr_pom.TestVerification@4681c175]" started-at="2025-05-27T15:38:11 IST" name="navigateToURL" finished-at="2025-05-27T15:38:12 IST" duration-ms="586" status="PASS">
+        <test-method is-config="true" signature="navigateToURL()[pri:0, instance:observr_pom.TestVerification@353352b6]" started-at="2025-06-25T23:58:57 IST" name="navigateToURL" finished-at="2025-06-25T23:58:57 IST" duration-ms="924" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToURL -->
-        <test-method signature="industry()[pri:3, instance:observr_pom.TestVerification@4681c175]" started-at="2025-05-27T15:38:12 IST" name="industry" finished-at="2025-05-27T15:38:12 IST" duration-ms="130" status="PASS">
+        <test-method signature="industry()[pri:3, instance:observr_pom.TestVerification@353352b6]" started-at="2025-06-25T23:58:57 IST" name="industry" finished-at="2025-06-25T23:58:58 IST" duration-ms="163" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- industry -->
-        <test-method is-config="true" signature="navigateToURL()[pri:0, instance:observr_pom.TestVerification@4681c175]" started-at="2025-05-27T15:38:12 IST" name="navigateToURL" finished-at="2025-05-27T15:38:12 IST" duration-ms="552" status="PASS">
+        <test-method is-config="true" signature="navigateToURL()[pri:0, instance:observr_pom.TestVerification@353352b6]" started-at="2025-06-25T23:58:58 IST" name="navigateToURL" finished-at="2025-06-25T23:58:58 IST" duration-ms="761" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToURL -->
-        <test-method signature="solutions()[pri:4, instance:observr_pom.TestVerification@4681c175]" started-at="2025-05-27T15:38:12 IST" name="solutions" finished-at="2025-05-27T15:38:13 IST" duration-ms="138" status="PASS">
+        <test-method signature="solutions()[pri:4, instance:observr_pom.TestVerification@353352b6]" started-at="2025-06-25T23:58:58 IST" name="solutions" finished-at="2025-06-25T23:58:59 IST" duration-ms="133" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- solutions -->
-        <test-method is-config="true" signature="navigateToURL()[pri:0, instance:observr_pom.TestVerification@4681c175]" started-at="2025-05-27T15:38:13 IST" name="navigateToURL" finished-at="2025-05-27T15:38:13 IST" duration-ms="544" status="PASS">
+        <test-method is-config="true" signature="navigateToURL()[pri:0, instance:observr_pom.TestVerification@353352b6]" started-at="2025-06-25T23:58:59 IST" name="navigateToURL" finished-at="2025-06-25T23:58:59 IST" duration-ms="606" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToURL -->
-        <test-method signature="product()[pri:5, instance:observr_pom.TestVerification@4681c175]" started-at="2025-05-27T15:38:13 IST" name="product" finished-at="2025-05-27T15:38:13 IST" duration-ms="106" status="PASS">
+        <test-method signature="product()[pri:5, instance:observr_pom.TestVerification@353352b6]" started-at="2025-06-25T23:58:59 IST" name="product" finished-at="2025-06-25T23:58:59 IST" duration-ms="136" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- product -->
-        <test-method is-config="true" signature="navigateToURL()[pri:0, instance:observr_pom.TestVerification@4681c175]" started-at="2025-05-27T15:38:13 IST" name="navigateToURL" finished-at="2025-05-27T15:38:14 IST" duration-ms="622" status="PASS">
+        <test-method is-config="true" signature="navigateToURL()[pri:0, instance:observr_pom.TestVerification@353352b6]" started-at="2025-06-25T23:58:59 IST" name="navigateToURL" finished-at="2025-06-25T23:59:00 IST" duration-ms="492" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToURL -->
-        <test-method signature="others()[pri:6, instance:observr_pom.TestVerification@4681c175]" started-at="2025-05-27T15:38:14 IST" name="others" finished-at="2025-05-27T15:38:14 IST" duration-ms="190" status="PASS">
+        <test-method signature="others()[pri:6, instance:observr_pom.TestVerification@353352b6]" started-at="2025-06-25T23:59:00 IST" name="others" finished-at="2025-06-25T23:59:00 IST" duration-ms="184" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- others -->
-        <test-method is-config="true" signature="quitbrowser()[pri:0, instance:observr_pom.TestVerification@4681c175]" started-at="2025-05-27T15:38:14 IST" name="quitbrowser" finished-at="2025-05-27T15:38:15 IST" duration-ms="1054" status="PASS">
+        <test-method is-config="true" signature="quitbrowser()[pri:0, instance:observr_pom.TestVerification@353352b6]" started-at="2025-06-25T23:59:00 IST" name="quitbrowser" finished-at="2025-06-25T23:59:02 IST" duration-ms="1669" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitbrowser -->

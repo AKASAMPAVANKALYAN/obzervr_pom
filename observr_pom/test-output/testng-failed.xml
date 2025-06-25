@@ -5,9 +5,9 @@
     <classes>
       <class name="observr_pom.TestVerification">
         <methods>
-          <include name="verifyscreenshot_maintext"/>
           <include name="quitbrowser"/>
           <include name="setupBrowser"/>
+          <include name="others"/>
           <include name="navigateToURL"/>
         </methods>
       </class> <!-- observr_pom.TestVerification -->
