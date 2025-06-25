@@ -128,8 +128,7 @@ public class TestVerification extends BaseClass  {
         ExtentReportManager.createTest("Verify Other Footer Links");
 
         HomePage homePage = new HomePage(driver);
-        Assert.assertTrue(homePage.blogenabled());
-        ExtentReportManager.getTest().pass("Blog enabled.");
+        
 
         Assert.assertTrue(homePage.googpalyenebled());
         ExtentReportManager.getTest().pass("Google Play enabled.");

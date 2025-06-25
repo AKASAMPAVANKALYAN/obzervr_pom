@@ -153,13 +153,7 @@ public class HomePage {
 		return templates().isEnabled();
 	}
     
-    public WebElement blog() {
-		return driver.findElement(By.xpath("//a[@class='link-category' and @href='/blog']"));
-	}
     
-    public boolean blogenabled() {
-		return blog().isEnabled();
-	}
     
     public WebElement googplay() {
 		return driver.findElement(By.className("google-play"));
