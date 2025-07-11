@@ -5,9 +5,13 @@
     <classes>
       <class name="observr_pom.TestVerification">
         <methods>
+          <include name="industry"/>
           <include name="quitbrowser"/>
           <include name="setupBrowser"/>
           <include name="others"/>
+          <include name="verifyvideobtn_loadmorebtn_booksession"/>
+          <include name="solutions"/>
+          <include name="product"/>
           <include name="navigateToURL"/>
         </methods>
       </class> <!-- observr_pom.TestVerification -->
